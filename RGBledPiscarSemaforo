@@ -1,0 +1,28 @@
+//RGB
+const int vermelho=5;
+const int verde=4;
+const int azul=3;
+
+void setup(){
+  pinMode(vermelho, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(azul, OUTPUT);
+}
+
+void loop(){
+  digitalWrite(verde, HIGH);
+  delay(10000);
+  digitalWrite(verde, LOW);
+  delay(100);
+  for(int i = 0; i <= 5; i++){ //Piscar amarelo
+    digitalWrite(vermelho, HIGH);
+    digitalWrite(verde, HIGH);
+    delay(500);
+    digitalWrite(vermelho, LOW);
+    digitalWrite(verde, LOW);
+    delay(500);
+  }
+  digitalWrite(vermelho, HIGH);
+  delay(2000);
+  digitalWrite(vermelho, LOW);
+}
