@@ -1,0 +1,31 @@
+const int pino=4;
+
+void setup(){
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+pinMode(pino,OUTPUT);
+}
+char seserial = Serial.read();
+void loop(){
+  // put your main code here, to run repeatedly:
+  if(Serial.available()>0){
+    if(seserial=='0'){
+      digitalWrite(pino,HIGH);
+      delay(2000);
+      digitalWrite(pino,LOW);
+      delay(2000);
+    }
+    else if(seserial=='1'){
+      digitalWrite(pino,HIGH);
+      delay(1000);
+      digitalWrite(pino,LOW);
+      delay(1000);
+    }
+  }
+  else{
+    digitalWrite(pino,HIGH);
+    delay(500);
+    digitalWrite(pino,LOW);
+    delay(500);
+  }
+}
